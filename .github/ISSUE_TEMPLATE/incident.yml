@@ -1,0 +1,32 @@
+name: Incident
+description: "Use this template to report production incidents"
+title: "[INC] ${{inputs.short_description}}"
+labels: ["incident","production"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please fill out the details below. Attach logs or links where possible."
+  - type: input
+    id: short_description
+    attributes:
+      label: "Short description"
+      description: "One-line summary of the incident"
+      placeholder: "Deployment 502 error"
+  - type: textarea
+    id: detailed_description
+    attributes:
+      label: "What happened?"
+      description: "Explain impact, steps to reproduce, and services affected"
+  - type: input
+    id: service_component
+    attributes:
+      label: "Service / Component"
+      description: "Which service or component is affected?"
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severity"
+      options:
+        - SEV1
+        - SEV2
+        - SEV3
